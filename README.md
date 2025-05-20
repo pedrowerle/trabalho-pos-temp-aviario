@@ -22,7 +22,6 @@ Fornecer ferramenta inteligente para monitoramento ambiental em aviários:
   - Python com:
     - `paho-mqtt`
     - `firebase-admin`
-    - `pandas`
 
 ## 🧠 Funcionalidades Principais
 
@@ -49,7 +48,6 @@ aviario-iot/
 ├── fog.py                      # Recebe dados via MQTT e envia ao Firebase
 ├── dashboard.py                # Interface com Streamlit
 ├── firebase_config.py          # Inicialização do Firebase
-├── aula-pos-iot-firebase-adminsdk-xxxxx.json  # 🔐 Chave privada (não subir)
 ├── requirements.txt            # Dependências do projeto
 └── README.md                   # Este arquivo
 ```
