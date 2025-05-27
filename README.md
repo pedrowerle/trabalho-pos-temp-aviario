@@ -13,37 +13,35 @@ Fornecer ferramenta inteligente para monitoramento ambiental em aviários:
 
 A solução desenvolvida simula um sistema completo de Internet das Coisas (IoT) voltado para o controle térmico de aviários, integrando as três camadas clássicas da arquitetura IoT: Edge, Fog e Cloud.
 
-1. Camada Edge – ESP32 + DHT22
+**1. Camada Edge – ESP32 + DHT22**
 
-Um microcontrolador ESP32, equipado com um sensor DHT22, é responsável por ler continuamente a temperatura e umidade do ambiente.
+- Um microcontrolador ESP32, equipado com um sensor DHT22, é responsável por ler continuamente a temperatura e umidade do ambiente.
 Com base nessas leituras:
 
-Se a temperatura sair da faixa ideal (21–26 °C), um LED é acionado, simulando um alerta ou ativação de aquecedor/ventilador.
+- Se a temperatura sair da faixa ideal (21–26 °C), um LED é acionado, simulando um alerta ou ativação de aquecedor/ventilador.
 
-Os dados são enviados via protocolo MQTT para um broker público (HiveMQ), representando o envio para a rede local ou nuvem.
+- Os dados são enviados via protocolo MQTT para um broker público (HiveMQ), representando o envio para a rede local ou nuvem.
 
 
-2. Camada Fog – Script Python com MQTT + Firebase
+**2. Camada Fog – Script Python com MQTT + Firebase**
 
-Um script Python roda localmente (no computador do operador) como ponte intermediária (Fog Computing).
+- Um script Python roda localmente (no computador do operador) como ponte intermediária (Fog Computing).
 Ele:
-
 Recebe os dados MQTT enviados pelo ESP32
 
-Processa as leituras (ex: cálculos de média, validação, timestamp)
-
+- Processa as leituras (ex: cálculos de média, validação, timestamp)
 Envia os dados estruturados para o Firebase Firestore, armazenando cada leitura como um documento na nuvem.
 
 
-3. Camada Cloud – Dashboard Web com Streamlit
+**3. Camada Cloud – Dashboard Web com Streamlit**
 
-Um painel web, desenvolvido com Streamlit, acessa os dados diretamente do Firebase e os exibe em tempo real:
+- Um painel web, desenvolvido com Streamlit, acessa os dados diretamente do Firebase e os exibe em tempo real:
 
-Um gráfico temporal mostra a evolução da temperatura
+- Um gráfico temporal mostra a evolução da temperatura
 
-Informações como umidade atual, status (ideal, baixa, alta) e último horário de leitura são apresentadas de forma clara
+- Informações como umidade atual, status (ideal, baixa, alta) e último horário de leitura são apresentadas de forma clara
 
-Uma tabela com histórico complementa a visualização
+- Uma tabela com histórico complementa a visualização
 
 ## 🔧 Tecnologias Utilizadas
 
